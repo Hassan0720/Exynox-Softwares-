@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Exynox Softwares | Futuristic Digital Agency</title>
-  <!-- Google Fonts: Space Grotesk + Inter (Modern & Bold) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Exynox Softwares | Modern Digital IT Solutions</title>
+  <!-- Google Fonts: Inter + Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <meta name="google-site-verification" content="hd5y5ypql-y9VrbsMqzC_sLGMwTLvMiH4XMJ-X5qkCc" />
   <style>
     * {
       margin: 0;
@@ -20,90 +19,105 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #0A0A0F;
-      color: #F0F0F8;
+      background: #F8FAFE;
+      color: #1A2C3E;
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
     h1, h2, h3, h4, .logo, .nav-links a, .btn {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
     }
 
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #1a1a2e;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(135deg, #A855F7, #06B6D4);
-      border-radius: 10px;
-    }
-
-    /* Glassmorphism Base */
-    .glass-card {
-      background: rgba(20, 20, 40, 0.5);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 32px;
+    /* Light Theme Variables */
+    :root {
+      --primary: #2D6AFF;
+      --primary-light: #5B8EFF;
+      --primary-soft: #E8F0FE;
+      --accent: #00C2D4;
+      --dark: #1A2C3E;
+      --gray-dark: #4A5568;
+      --gray: #718096;
+      --gray-light: #E2E8F0;
+      --bg-white: #FFFFFF;
+      --bg-gray: #F8FAFE;
+      --shadow-sm: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+      --shadow-md: 0 20px 25px -12px rgba(0,0,0,0.08);
+      --shadow-hover: 0 25px 35px -12px rgba(45,106,255,0.15);
     }
 
     .container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 40px;
+      padding: 0 32px;
     }
 
     section {
-      padding: 100px 0;
-      position: relative;
+      padding: 80px 0;
     }
 
-    /* Preloader */
-    #preloader {
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 16px;
+      letter-spacing: -0.3px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--gray);
+      max-width: 680px;
+      margin: 0 auto 56px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 34px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 14px rgba(45,106,255,0.25);
+    }
+    .btn-primary:hover {
+      background: #1a55e0;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(45,106,255,0.35);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Navbar */
+    .navbar {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      background: #0A0A0F;
-      z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: opacity 0.8s ease;
-    }
-    .loader {
-      width: 60px;
-      height: 60px;
-      border: 3px solid rgba(168, 85, 247, 0.3);
-      border-top: 3px solid #A855F7;
-      border-radius: 50%;
-      animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* Navbar Premium */
-    .navbar {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 1280px;
-      background: rgba(10, 10, 15, 0.7);
-      backdrop-filter: blur(16px);
-      border-radius: 80px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.05);
       z-index: 1000;
-      padding: 12px 32px;
-      transition: all 0.3s;
+      padding: 16px 0;
     }
     .nav-container {
       display: flex;
@@ -111,314 +125,493 @@
       align-items: center;
     }
     .logo {
-      font-size: 1.7rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #FFFFFF, #A855F7);
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
     .nav-links {
       display: flex;
-      gap: 40px;
+      gap: 36px;
       list-style: none;
     }
     .nav-links a {
       text-decoration: none;
-      color: #E0E0FF;
       font-weight: 500;
+      color: var(--dark);
       transition: 0.3s;
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
     .nav-links a:hover {
-      color: #A855F7;
+      color: var(--primary);
     }
     .mobile-menu {
       display: none;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       cursor: pointer;
-      color: white;
+      color: var(--dark);
     }
 
-    /* Hero Section with Video Background */
+    /* Hero */
     .hero {
-      height: 100vh;
-      min-height: 700px;
-      position: relative;
+      padding-top: 140px;
+      padding-bottom: 80px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #F0F5FF 100%);
+    }
+    .hero-grid {
       display: flex;
       align-items: center;
-      overflow: hidden;
-    }
-    .hero-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(10,10,20,0.85), rgba(30,20,60,0.75));
-      z-index: 1;
+      gap: 60px;
+      flex-wrap: wrap;
     }
     .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
+      flex: 1;
     }
     .hero-content h1 {
-      font-size: 4.2rem;
+      font-size: 3.5rem;
       font-weight: 800;
-      line-height: 1.1;
-      background: linear-gradient(135deg, #FFFFFF, #C084FC, #22D3EE);
+      line-height: 1.2;
+      color: var(--dark);
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+    .hero-content .highlight {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-bottom: 24px;
     }
     .hero-content p {
-      font-size: 1.2rem;
-      color: #D1D5FF;
-      margin-bottom: 40px;
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 32px;
+      line-height: 1.6;
     }
     .btn-group {
       display: flex;
-      gap: 20px;
+      gap: 16px;
+      flex-wrap: wrap;
     }
-    .btn {
-      padding: 14px 36px;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-      backdrop-filter: blur(4px);
+    .hero-image {
+      flex: 1;
+      text-align: center;
     }
-    .btn-primary {
-      background: linear-gradient(95deg, #A855F7, #06B6D4);
-      color: white;
-      box-shadow: 0 8px 20px rgba(168,85,247,0.3);
-    }
-    .btn-primary:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(168,85,247,0.5);
-    }
-    .btn-outline {
-      border: 1px solid rgba(168,85,247,0.6);
-      background: rgba(255,255,255,0.05);
-      color: white;
-    }
-    .btn-outline:hover {
-      background: rgba(168,85,247,0.2);
-      transform: translateY(-3px);
+    .hero-image img {
+      max-width: 100%;
+      width: 480px;
+      border-radius: 32px;
+      box-shadow: var(--shadow-md);
     }
 
-    /* Section Titles */
-    .section-title {
-      font-size: 2.8rem;
+    /* About */
+    .about-grid {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .about-text {
+      flex: 1.2;
+    }
+    .about-text h3 {
+      font-size: 2rem;
       font-weight: 700;
-      text-align: center;
-      background: linear-gradient(135deg, #FFFFFF, #C084FC);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 16px;
+      color: var(--dark);
+      margin-bottom: 20px;
     }
-    .section-sub {
-      text-align: center;
-      color: #9CA3CF;
-      max-width: 600px;
-      margin: 0 auto 60px;
+    .about-text p {
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .stats {
+      display: flex;
+      gap: 40px;
+      margin: 30px 0;
+    }
+    .stats i {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .stats strong {
+      font-size: 1.5rem;
+      color: var(--dark);
+    }
+    .about-image {
+      flex: 0.9;
+    }
+    .about-image img {
+      width: 100%;
+      border-radius: 32px;
+      box-shadow: var(--shadow-sm);
     }
 
-    /* Glass Cards for Services */
+    /* Services */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
       gap: 30px;
     }
     .service-card {
-      background: rgba(25, 25, 45, 0.5);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px;
-      padding: 40px 28px;
-      transition: all 0.4s;
+      background: var(--bg-white);
+      border-radius: 24px;
+      padding: 36px 28px;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,0.03);
       text-align: center;
     }
     .service-card:hover {
-      transform: translateY(-12px);
-      border-color: rgba(168,85,247,0.5);
-      box-shadow: 0 25px 40px -12px rgba(168,85,247,0.2);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary-light);
     }
     .service-card i {
       font-size: 2.8rem;
-      background: linear-gradient(135deg, #A855F7, #22D3EE);
+      background: linear-gradient(135deg, var(--primary), var(--accent));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       margin-bottom: 20px;
     }
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    .service-card p {
+      color: var(--gray);
+      line-height: 1.5;
+    }
 
-    /* Why Choose */
+    /* Features */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 40px;
+      gap: 30px;
     }
     .feature-item {
-      background: rgba(20, 20, 35, 0.6);
-      backdrop-filter: blur(8px);
-      border-radius: 28px;
-      padding: 30px 20px;
+      background: var(--bg-white);
+      border-radius: 24px;
+      padding: 32px 24px;
       text-align: center;
       transition: 0.3s;
+      box-shadow: var(--shadow-sm);
     }
     .feature-item:hover {
-      background: rgba(168,85,247,0.1);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    .feature-item i {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 16px;
     }
 
-    /* Parallax Process */
+    /* Process */
     .process-wrapper {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 25px;
+      gap: 24px;
     }
     .process-step {
-      background: rgba(15, 15, 30, 0.7);
-      backdrop-filter: blur(10px);
-      border-radius: 40px;
-      padding: 30px 20px;
       flex: 1;
       min-width: 170px;
       text-align: center;
+      background: var(--bg-white);
+      padding: 32px 20px;
+      border-radius: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: 0.3s;
+    }
+    .process-step:hover {
+      transform: translateY(-5px);
     }
     .step-icon {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(135deg, #A855F7, #06B6D4);
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
       border-radius: 60px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 20px;
-      font-size: 1.6rem;
-      font-weight: bold;
+      color: white;
+      font-weight: 700;
+      font-size: 1.4rem;
     }
 
-    /* Portfolio Gallery with Hover Zoom */
+    /* Portfolio - Simple & Clean */
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 32px;
     }
     .portfolio-item {
       position: relative;
-      border-radius: 28px;
+      border-radius: 24px;
       overflow: hidden;
       aspect-ratio: 4/3;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: 0.3s;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
     }
     .portfolio-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.7s ease;
+      transition: transform 0.5s ease;
     }
     .portfolio-overlay {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(168,85,247,0.7), rgba(6,182,212,0.7));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: 0.4s;
-      backdrop-filter: blur(6px);
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 20px;
+      color: white;
+      transform: translateY(0);
+      transition: 0.3s;
+    }
+    .portfolio-overlay h3 {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+    .portfolio-overlay p {
+      font-size: 0.85rem;
+      opacity: 0.8;
     }
     .portfolio-item:hover .portfolio-overlay {
-      opacity: 1;
-    }
-    .portfolio-item:hover img {
-      transform: scale(1.08);
+      padding-bottom: 24px;
     }
 
-    /* CTA Parallax */
-    .cta-parallax {
-      background-attachment: fixed;
-      background-image: url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1600');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    .cta-overlay {
-      background: rgba(10,10,20,0.8);
-      padding: 100px 0;
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
       text-align: center;
+      padding: 70px 20px;
+      color: white;
+    }
+    .cta-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 24px;
+    }
+    .cta-section .btn-primary {
+      background: white;
+      color: var(--primary);
+      box-shadow: none;
+    }
+    .cta-section .btn-primary:hover {
+      transform: translateY(-3px);
     }
 
-    /* Testimonials Glass Slider */
+    /* Testimonials */
     .testimonial-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
     }
     .testimonial-card {
-      background: rgba(30, 30, 50, 0.5);
-      backdrop-filter: blur(12px);
-      border-radius: 32px;
+      background: var(--bg-white);
+      border-radius: 24px;
       padding: 32px;
-      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: var(--shadow-sm);
+      transition: 0.3s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    .stars {
+      color: #FFB800;
+      margin-bottom: 16px;
+    }
+    .client-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .client-info img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
     }
 
-    /* Pricing Plans (Category wise, no price) */
-    .plans-grid {
+    /* Contact Section - Highlighted */
+    .contact-section {
+      background: linear-gradient(135deg, var(--primary-soft) 0%, #FFFFFF 100%);
+      position: relative;
+    }
+    .contact-wrapper {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
+      gap: 50px;
     }
-    .plan-card {
-      background: rgba(20, 20, 40, 0.6);
-      backdrop-filter: blur(16px);
-      border-radius: 36px;
-      padding: 40px 30px;
+    .contact-info {
       flex: 1;
-      min-width: 260px;
-      text-align: center;
-      transition: all 0.3s;
+      background: var(--bg-white);
+      border-radius: 32px;
+      padding: 48px 40px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(45,106,255,0.1);
     }
-    .plan-card:hover {
-      transform: scale(1.02);
-      border: 1px solid rgba(168,85,247,0.5);
+    .contact-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 32px;
+      color: var(--dark);
+    }
+    .detail-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+    .detail-item i {
+      width: 52px;
+      height: 52px;
+      background: var(--primary-soft);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.3rem;
+      transition: 0.3s;
+    }
+    .detail-item:hover i {
+      background: var(--primary);
+      color: white;
+      transform: scale(1.05);
+    }
+    .detail-item a {
+      text-decoration: none;
+      color: var(--gray-dark);
+      transition: 0.2s;
+    }
+    .detail-item a:hover {
+      color: var(--primary);
+    }
+    .detail-item p {
+      color: var(--gray-dark);
+    }
+    .detail-item p strong {
+      color: var(--dark);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .contact-form {
+      flex: 1;
+      background: var(--bg-white);
+      border-radius: 32px;
+      padding: 48px 40px;
+      box-shadow: var(--shadow-md);
+    }
+    .contact-form h3 {
+      font-size: 1.8rem;
+      margin-bottom: 32px;
+      color: var(--dark);
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 16px 20px;
+      background: var(--bg-gray);
+      border: 1px solid var(--gray-light);
+      border-radius: 20px;
+      color: var(--dark);
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 20px;
+      transition: 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(45,106,255,0.1);
+    }
+    .contact-form .btn-primary {
+      width: 100%;
+      padding: 16px;
+      font-size: 1rem;
+    }
+
+    /* Social Links */
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .social-links a {
+      width: 44px;
+      height: 44px;
+      background: var(--primary-soft);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.2rem;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-4px);
     }
 
     /* Footer */
     footer {
-      background: #05050A;
+      background: #0A121F;
+      color: #B0C4DE;
       padding: 60px 0 30px;
-      border-top: 1px solid rgba(255,255,255,0.05);
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+    .footer-col p, .footer-col a {
+      color: #B0C4DE;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      transition: 0.2s;
+    }
+    .footer-col a:hover {
+      color: var(--primary-light);
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.85rem;
     }
 
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-content h1 { font-size: 2.8rem; }
+      .section-title { font-size: 2.2rem; }
+    }
     @media (max-width: 768px) {
-      .container {
-        padding: 0 24px;
-      }
-      .navbar {
-        width: 95%;
-        padding: 12px 20px;
-      }
+      .container { padding: 0 24px; }
       .nav-links {
         display: none;
         flex-direction: column;
@@ -426,95 +619,93 @@
         top: 70px;
         left: 0;
         width: 100%;
-        background: rgba(10,10,20,0.95);
-        backdrop-filter: blur(20px);
-        padding: 20px;
-        border-radius: 30px;
+        background: white;
+        padding: 24px;
+        box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        border-radius: 0 0 24px 24px;
       }
-      .nav-links.active {
-        display: flex;
-      }
-      .mobile-menu {
-        display: block;
-      }
-      .hero-content h1 {
-        font-size: 2.5rem;
-      }
-      .section-title {
-        font-size: 2rem;
-      }
+      .nav-links.active { display: flex; }
+      .mobile-menu { display: block; }
+      .hero { padding-top: 120px; }
+      .hero-content h1 { font-size: 2.2rem; }
+      .section-title { font-size: 1.8rem; }
+      .about-grid, .hero-grid { flex-direction: column; }
+      .contact-info, .contact-form { padding: 32px 24px; }
+    }
+    @media (max-width: 480px) {
+      .hero-content h1 { font-size: 1.9rem; }
+      .btn { padding: 10px 24px; }
     }
   </style>
 </head>
 <body>
 
-<div id="preloader">
-  <div class="loader"></div>
+<div id="preloader" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#F8FAFE; z-index:9999; display:flex; justify-content:center; align-items:center;">
+  <div class="loader" style="width:50px; height:50px; border:3px solid #E2E8F0; border-top:3px solid #2D6AFF; border-radius:50%; animation: spin 1s ease infinite;"></div>
 </div>
 
 <nav class="navbar">
-  <div class="nav-container">
-    <div class="logo">Exynox<span style="color:#A855F7;">Softwares</span></div>
+  <div class="container nav-container">
+    <div class="logo">Exynox<span style="color:#2D6AFF;">Softwares</span></div>
     <div class="mobile-menu" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#plans">Plans</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
 <main>
-  <!-- Hero Section with Video Background -->
+  <!-- Hero -->
   <section id="home" class="hero">
-    <video autoplay muted loop playsinline class="hero-video" poster="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg">
-      <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-server-room-2215-large.mp4" type="video/mp4">
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
-      <h1>Digital IT Services With Excellent Quality</h1>
-      <p>We help businesses grow online with modern web & app solutions. Futuristic, fast, and reliable digital transformation.</p>
-      <div class="btn-group">
-        <a href="#plans" class="btn btn-primary">Get Started</a>
-        <a href="#contact" class="btn btn-outline">Contact Us</a>
+    <div class="container hero-grid">
+      <div class="hero-content" data-aos="fade-up">
+        <h1>Digital IT Services With <span class="highlight">Excellent Quality</span></h1>
+        <p>We help businesses grow online with modern web & app solutions. Simple, fast, and reliable digital transformation.</p>
+        <div class="btn-group">
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+          <a href="#contact" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-image" data-aos="fade-left">
+        <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Team collaboration">
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Innovative IT Solutions</h2>
-      <div style="display: flex; gap: 50px; flex-wrap: wrap; align-items: center;">
-        <div style="flex:1" data-aos="fade-right">
-          <p style="font-size:1.1rem; color:#C0C0E0; margin-bottom:20px;">Exynox Softwares is a modern digital agency delivering cutting-edge websites, apps, and software. Our mission: simplicity, speed, and client satisfaction. We blend creative design with robust technology to bring your digital future to life.</p>
-          <div style="display: flex; gap: 30px; margin: 30px 0;">
-            <div><i class="fas fa-rocket" style="font-size:2rem; color:#A855F7;"></i><br><strong>45+</strong><br>Projects</div>
-            <div><i class="fas fa-smile" style="font-size:2rem; color:#A855F7;"></i><br><strong>100%</strong><br>Satisfaction</div>
-          </div>
-          <a href="#" class="btn btn-outline">Read More →</a>
+    <div class="container about-grid">
+      <div class="about-text" data-aos="fade-right">
+        <h3>Innovative IT Solutions That Drive Growth</h3>
+        <p>Exynox Softwares is a modern digital agency delivering cutting-edge websites, apps, and software. Our mission: simplicity, speed, and client satisfaction. We blend creative design with robust technology to bring your digital future to life.</p>
+        <div class="stats">
+          <div><i class="fas fa-rocket"></i><br><strong>45+</strong><br>Projects</div>
+          <div><i class="fas fa-smile"></i><br><strong>100%</strong><br>Satisfaction</div>
+          <div><i class="fas fa-clock"></i><br><strong>1+ Year</strong><br>Experience</div>
         </div>
-        <div style="flex:1" data-aos="fade-left">
-          <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Team" style="width:100%; border-radius:32px; box-shadow:0 20px 35px rgba(0,0,0,0.3);">
-        </div>
+        <a href="#contact" class="btn btn-primary">Work With Us →</a>
+      </div>
+      <div class="about-image" data-aos="fade-left">
+        <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600" alt="About us">
       </div>
     </div>
   </section>
 
-  <!-- Services Glassmorphism -->
-  <section id="services" style="background: radial-gradient(circle at 10% 20%, rgba(168,85,247,0.05), transparent);">
+  <!-- Services -->
+  <section id="services" style="background: var(--bg-gray);">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">What We Deliver</h2>
-      <p class="section-sub" data-aos="fade-up">Premium digital services to scale your business</p>
+      <p class="section-sub" data-aos="fade-up">Comprehensive digital services to scale your business</p>
       <div class="services-grid">
         <div class="service-card" data-aos="zoom-in"><i class="fas fa-code"></i><h3>Web Development</h3><p>Modern, responsive websites with seamless UX.</p></div>
         <div class="service-card" data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-android"></i><h3>App Development</h3><p>iOS & Android apps built for performance.</p></div>
         <div class="service-card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-paint-brush"></i><h3>UI/UX Design</h3><p>User-first interfaces that convert.</p></div>
         <div class="service-card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-database"></i><h3>Software Development</h3><p>Custom enterprise software & tools.</p></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-sync-alt"></i><h3>Maintenance</h3><p>24/7 security updates and support.</p></div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-sync-alt"></i><h3>Website Maintenance</h3><p>24/7 security updates and support.</p></div>
         <div class="service-card" data-aos="zoom-in" data-aos-delay="500"><i class="fas fa-chart-line"></i><h3>Digital Marketing</h3><p>SEO, social media & growth strategies.</p></div>
       </div>
     </div>
@@ -525,16 +716,17 @@
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
       <div class="features-grid">
-        <div class="feature-item" data-aos="flip-left"><i class="fas fa-users" style="font-size:2rem; color:#A855F7;"></i><h4>Experienced Team</h4><p>Skilled professionals</p></div>
-        <div class="feature-item" data-aos="flip-left" data-aos-delay="100"><i class="fas fa-tags" style="font-size:2rem; color:#A855F7;"></i><h4>Affordable Pricing</h4><p>Best value</p></div>
-        <div class="feature-item" data-aos="flip-left" data-aos-delay="200"><i class="fas fa-bolt" style="font-size:2rem; color:#A855F7;"></i><h4>Fast Delivery</h4><p>Agile process</p></div>
-        <div class="feature-item" data-aos="flip-left" data-aos-delay="300"><i class="fas fa-shield-alt" style="font-size:2rem; color:#A855F7;"></i><h4>Secure Solutions</h4><p>Robust security</p></div>
+        <div class="feature-item" data-aos="flip-left"><i class="fas fa-users"></i><h4>Experienced Team</h4><p>Skilled professionals</p></div>
+        <div class="feature-item" data-aos="flip-left" data-aos-delay="100"><i class="fas fa-tags"></i><h4>Affordable Pricing</h4><p>Best value for quality</p></div>
+        <div class="feature-item" data-aos="flip-left" data-aos-delay="200"><i class="fas fa-bolt"></i><h4>Fast Delivery</h4><p>Agile & on-time</p></div>
+        <div class="feature-item" data-aos="flip-left" data-aos-delay="300"><i class="fas fa-shield-alt"></i><h4>Secure Solutions</h4><p>Robust security</p></div>
+        <div class="feature-item" data-aos="flip-left" data-aos-delay="400"><i class="fas fa-headset"></i><h4>Customer Support</h4><p>24/7 assistance</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Work Process with Parallax effect -->
-  <section style="background: linear-gradient(145deg, #0A0A14, #111122);">
+  <!-- Work Process -->
+  <section style="background: var(--bg-gray);">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Our Work Process</h2>
       <div class="process-wrapper">
@@ -547,110 +739,203 @@
     </div>
   </section>
 
-  <!-- Portfolio Gallery -->
+  <!-- Portfolio - Simple & Clean -->
   <section id="portfolio">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Our Creative Portfolio</h2>
+      <h2 class="section-title" data-aos="fade-up">Our Recent Work</h2>
+      <p class="section-sub" data-aos="fade-up">Some of our best projects delivered with excellence</p>
       <div class="portfolio-grid" id="portfolioGrid"></div>
     </div>
   </section>
 
-  <!-- Parallax CTA -->
-  <div class="cta-parallax">
-    <div class="cta-overlay">
-      <div class="container" data-aos="zoom-in">
-        <h2 style="font-size:2.5rem;">We Deliver Best IT Solutions for Your Business</h2>
-        <a href="#contact" class="btn btn-primary" style="margin-top:30px; display:inline-block;">Hire Us Now</a>
-      </div>
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="container">
+      <h2 data-aos="zoom-in">Ready to Transform Your Digital Presence?</h2>
+      <a href="#contact" class="btn btn-primary" data-aos="zoom-in" data-aos-delay="100">Let's Talk</a>
     </div>
   </div>
 
   <!-- Testimonials -->
   <section>
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Client Love</h2>
+      <h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2>
       <div class="testimonial-grid">
-        <div class="testimonial-card" data-aos="fade-right"><div class="stars" style="color:#FFD966;">★★★★★</div><p>"Exynox built our corporate website fast and smooth. Very professional!"</p><h4>— Rajesh K.</h4></div>
-        <div class="testimonial-card" data-aos="fade-up"><div class="stars" style="color:#FFD966;">★★★★★</div><p>"Amazing app development, delivered before deadline. Highly recommend."</p><h4>— Sneha M.</h4></div>
-        <div class="testimonial-card" data-aos="fade-left"><div class="stars" style="color:#FFD966;">★★★★☆</div><p>"Great support and quality designs. Will work again."</p><h4>— Ankit S.</h4></div>
+        <div class="testimonial-card" data-aos="fade-right"><div class="stars">★★★★★</div><p>"Exynox built our corporate website fast and smooth. Very professional and responsive team!"</p><div class="client-info"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="client"><span><strong>Rajesh K.</strong><br>Founder, TechStart</span></div></div>
+        <div class="testimonial-card" data-aos="fade-up"><div class="stars">★★★★★</div><p>"Amazing app development, delivered before deadline. Highly recommend their services."</p><div class="client-info"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="client"><span><strong>Sneha M.</strong><br>CEO, UrbanStore</span></div></div>
+        <div class="testimonial-card" data-aos="fade-left"><div class="stars">★★★★★</div><p>"Great support and quality designs. They understood our vision perfectly. Will work again!"</p><div class="client-info"><img src="https://randomuser.me/api/portraits/men/45.jpg" alt="client"><span><strong>Ankit S.</strong><br>Director, CreativeHub</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- Plans Section (Category Wise, No Price) -->
-  <section id="plans" style="background: radial-gradient(circle at 90% 30%, rgba(6,182,212,0.05), transparent);">
+  <!-- Contact Section - Highlighted with Linkable Info -->
+  <section id="contact" class="contact-section">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Solutions For Every Need</h2>
-      <p class="section-sub" data-aos="fade-up">Choose the perfect category for your business growth</p>
-      <div class="plans-grid">
-        <div class="plan-card" data-aos="flip-right"><div class="plan-icon"><i class="fas fa-rocket" style="font-size:2.5rem; color:#A855F7;"></i></div><div style="background:#A855F720; display:inline-block; padding:4px 16px; border-radius:50px; margin-bottom:20px;">Startup</div><h3>Essential</h3><ul style="list-style:none; text-align:left;"><li><i class="fas fa-check-circle"></i> 1 Landing Page</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Basic SEO</li></ul><a href="#contact" class="btn btn-outline">Enquire Now</a></div>
-        <div class="plan-card" data-aos="flip-right" data-aos-delay="150"><div class="plan-icon"><i class="fas fa-chart-line" style="font-size:2.5rem; color:#22D3EE;"></i></div><div style="background:#22D3EE20; display:inline-block; padding:4px 16px; border-radius:50px; margin-bottom:20px;">Business</div><h3>Professional</h3><ul style="list-style:none; text-align:left;"><li><i class="fas fa-check-circle"></i> Up to 15 Pages</li><li><i class="fas fa-check-circle"></i> CMS + E-commerce</li><li><i class="fas fa-check-circle"></i> Advanced SEO</li></ul><a href="#contact" class="btn btn-primary">Get Quote</a></div>
-        <div class="plan-card" data-aos="flip-right" data-aos-delay="300"><div class="plan-icon"><i class="fas fa-crown" style="font-size:2.5rem; color:#FBBF24;"></i></div><div style="background:#FBBF2420; display:inline-block; padding:4px 16px; border-radius:50px; margin-bottom:20px;">Enterprise</div><h3>Custom Solution</h3><ul style="list-style:none; text-align:left;"><li><i class="fas fa-check-circle"></i> Fully Custom Web/App</li><li><i class="fas fa-check-circle"></i> API Integrations</li><li><i class="fas fa-check-circle"></i> 24/7 Dedicated Team</li></ul><a href="#contact" class="btn btn-outline">Contact Sales</a></div>
+      <h2 class="section-title" data-aos="fade-up">Let's Connect</h2>
+      <p class="section-sub" data-aos="fade-up">Have a project in mind? Reach out to us — we'd love to hear from you!</p>
+      <div class="contact-wrapper">
+        <div class="contact-info" data-aos="fade-right">
+          <h3><i class="fas fa-comment-dots" style="margin-right: 12px; color: var(--primary);"></i> Get In Touch</h3>
+          
+          <div class="detail-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Visit Us</strong>
+              <p>Maharajganj, Uttar Pradesh - 273163, India</p>
+            </div>
+          </div>
+          
+          <div class="detail-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <strong>Call Us</strong>
+              <a href="tel:+918299388115">+91 8299388115</a>
+            </div>
+          </div>
+          
+          <div class="detail-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email Us</strong>
+              <a href="mailto:Hassanmrj4u@gmail.com">Hassanmrj4u@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="detail-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <strong>Business Hours</strong>
+              <p>Mon-Fri: 9AM - 7PM | Sat: 10AM - 4PM</p>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/918299388115" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="contact-form" data-aos="fade-left">
+          <h3><i class="fas fa-paper-plane" style="margin-right: 12px; color: var(--primary);"></i> Send a Message</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" placeholder="Your Full Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Tell us about your project..." rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-arrow-right"></i></button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer id="contact">
-    <div class="container footer-grid">
-      <div><h4>Exynox Softwares</h4><p>We Build Your Digital Future</p><p>Maharajganj, Uttar Pradesh - 273163</p><p><i class="fas fa-phone-alt"></i> 8299388115</p><p><i class="fas fa-envelope"></i> Hassanmrj4u@gmail.com</p></div>
-      <div><h4>Quick Links</h4><a href="#home" style="display:block; color:#9CA3CF; margin-bottom:8px;">Home</a><a href="#about" style="display:block; color:#9CA3CF; margin-bottom:8px;">About</a><a href="#services" style="display:block; color:#9CA3CF;">Services</a></div>
-      <div><h4>Connect</h4><div class="social-icons"><i class="fab fa-facebook-f" style="margin-right:16px;"></i><i class="fab fa-instagram" style="margin-right:16px;"></i><i class="fab fa-whatsapp"></i></div><p>© 2025 Exynox Softwares</p></div>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Exynox Softwares</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Maharajganj, Uttar Pradesh</p>
+          <p><i class="fas fa-phone-alt"></i> <a href="tel:+918299388115" style="color:#B0C4DE;">+91 8299388115</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:Hassanmrj4u@gmail.com" style="color:#B0C4DE;">Hassanmrj4u@gmail.com</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="#home"><i class="fas fa-chevron-right"></i> Home</a>
+          <a href="#about"><i class="fas fa-chevron-right"></i> About</a>
+          <a href="#services"><i class="fas fa-chevron-right"></i> Services</a>
+          <a href="#portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a>
+        </div>
+        <div class="footer-col">
+          <h4>Our Services</h4>
+          <a href="#"><i class="fas fa-code"></i> Web Development</a>
+          <a href="#"><i class="fas fa-mobile-alt"></i> App Development</a>
+          <a href="#"><i class="fas fa-paint-brush"></i> UI/UX Design</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <p><i class="fas fa-headset"></i> 24/7 Support</p>
+          <p><i class="fas fa-comment-dots"></i> Live Chat Available</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Exynox Softwares | We Build Your Digital Future | All Rights Reserved</p>
+      </div>
     </div>
   </footer>
 </main>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  // Preloader
   window.addEventListener('load', function() {
     const preloader = document.getElementById('preloader');
     preloader.style.opacity = '0';
-    setTimeout(() => {
-      preloader.style.display = 'none';
-    }, 800);
+    setTimeout(() => { preloader.style.display = 'none'; }, 600);
   });
+  AOS.init({ duration: 700, once: true, offset: 80 });
 
-  AOS.init({ duration: 800, once: false, offset: 80 });
-
-  // Mobile menu toggle
   const mobileBtn = document.getElementById('mobileMenuBtn');
-  const navLinks = document.getElementById('navLinks');
-  mobileBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+  const navLinksMenu = document.getElementById('navLinks');
+  mobileBtn.addEventListener('click', () => navLinksMenu.classList.toggle('active'));
 
-  // Portfolio items with high-quality images
+  // Simple Portfolio Items - Clean Presentation
   const portfolioItems = [
-    { name: "Corporate Hub", cat: "business", img: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=500" },
-    { name: "Urban Store", cat: "ecommerce", img: "https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=500" },
-    { name: "Creative Folio", cat: "portfolio", img: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=500" },
-    { name: "Organic Market", cat: "ecommerce", img: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=500" }
+    { name: "Corporate Nexus", category: "Web Design", img: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { name: "Urban E-Store", category: "E-commerce", img: "https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { name: "Creative Portfolio", category: "UI/UX", img: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { name: "Organic Market", category: "Web App", img: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600" }
   ];
+  
   const portfolioGrid = document.getElementById('portfolioGrid');
-  function renderPortfolio() {
-    portfolioGrid.innerHTML = portfolioItems.map(item => `
-      <div class="portfolio-item" data-aos="fade-up">
-        <img src="${item.img}" alt="${item.name}" loading="lazy">
-        <div class="portfolio-overlay">
-          <span style="font-weight:600;">${item.name}</span>
-        </div>
+  portfolioGrid.innerHTML = portfolioItems.map(item => `
+    <div class="portfolio-item" data-aos="fade-up">
+      <img src="${item.img}" alt="${item.name}" loading="lazy">
+      <div class="portfolio-overlay">
+        <h3>${item.name}</h3>
+        <p>${item.category}</p>
       </div>
-    `).join('');
-  }
-  renderPortfolio();
+    </div>
+  `).join('');
 
-  // Smooth scroll for all anchor links
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
-      if (targetId === "#" || targetId === "") return;
+      if(targetId === "#" || targetId === "") return;
       const target = document.querySelector(targetId);
-      if (target) {
+      if(target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        if (navLinks.classList.contains('active')) navLinks.classList.remove('active');
+        navLinksMenu.classList.remove('active');
       }
     });
   });
+
+  // Form submission
+  const contactForm = document.getElementById('contactForm');
+  if(contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('✨ Thank you for reaching out! We will get back to you within 24 hours.');
+      this.reset();
+    });
+  }
 </script>
+<style>
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
 </body>
-</html>
+  </html>
