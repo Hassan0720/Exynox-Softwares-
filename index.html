@@ -106,6 +106,15 @@
       color: white;
       transform: translateY(-3px);
     }
+    .btn-soft {
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+    .btn-soft:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
 
     /* Navbar */
     .navbar {
@@ -131,6 +140,7 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      text-decoration: none;
     }
     .nav-links {
       display: flex;
@@ -345,7 +355,7 @@
       font-size: 1.4rem;
     }
 
-    /* Portfolio - Simple & Clean */
+    /* Portfolio */
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -385,13 +395,6 @@
       font-size: 1.2rem;
       margin-bottom: 4px;
     }
-    .portfolio-overlay p {
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-    .portfolio-item:hover .portfolio-overlay {
-      padding-bottom: 24px;
-    }
 
     /* CTA */
     .cta-section {
@@ -408,9 +411,6 @@
       background: white;
       color: var(--primary);
       box-shadow: none;
-    }
-    .cta-section .btn-primary:hover {
-      transform: translateY(-3px);
     }
 
     /* Testimonials */
@@ -447,10 +447,9 @@
       object-fit: cover;
     }
 
-    /* Contact Section - Highlighted */
+    /* Contact Section */
     .contact-section {
       background: linear-gradient(135deg, var(--primary-soft) 0%, #FFFFFF 100%);
-      position: relative;
     }
     .contact-wrapper {
       display: flex;
@@ -486,12 +485,6 @@
       justify-content: center;
       color: var(--primary);
       font-size: 1.3rem;
-      transition: 0.3s;
-    }
-    .detail-item:hover i {
-      background: var(--primary);
-      color: white;
-      transform: scale(1.05);
     }
     .detail-item a {
       text-decoration: none;
@@ -500,14 +493,6 @@
     }
     .detail-item a:hover {
       color: var(--primary);
-    }
-    .detail-item p {
-      color: var(--gray-dark);
-    }
-    .detail-item p strong {
-      color: var(--dark);
-      display: block;
-      margin-bottom: 4px;
     }
     .contact-form {
       flex: 1;
@@ -537,13 +522,6 @@
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(45,106,255,0.1);
     }
-    .contact-form .btn-primary {
-      width: 100%;
-      padding: 16px;
-      font-size: 1rem;
-    }
-
-    /* Social Links */
     .social-links {
       display: flex;
       gap: 16px;
@@ -584,6 +562,7 @@
       color: white;
       margin-bottom: 20px;
       font-size: 1.1rem;
+      font-weight: 600;
     }
     .footer-col p, .footer-col a {
       color: #B0C4DE;
@@ -597,6 +576,31 @@
     }
     .footer-col a:hover {
       color: var(--primary-light);
+      transform: translateX(3px);
+    }
+    .footer-col i {
+      width: 24px;
+      color: var(--primary-light);
+    }
+    .footer-social {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .footer-social a {
+      width: 38px;
+      height: 38px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+      margin-bottom: 0;
+    }
+    .footer-social a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
     }
     .footer-bottom {
       text-align: center;
@@ -631,6 +635,7 @@
       .section-title { font-size: 1.8rem; }
       .about-grid, .hero-grid { flex-direction: column; }
       .contact-info, .contact-form { padding: 32px 24px; }
+      .footer-grid { gap: 30px; }
     }
     @media (max-width: 480px) {
       .hero-content h1 { font-size: 1.9rem; }
@@ -646,14 +651,14 @@
 
 <nav class="navbar">
   <div class="container nav-container">
-    <div class="logo">Exynox<span style="color:#2D6AFF;">Softwares</span></div>
+    <a href="index.html" class="logo">Exynox<span style="color:#2D6AFF;">Softwares</span></a>
     <div class="mobile-menu" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/Portfolio.html">Portfolio</a></li>
+      <li><a href="/Contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -666,8 +671,8 @@
         <h1>Digital IT Services With <span class="highlight">Excellent Quality</span></h1>
         <p>We help businesses grow online with modern web & app solutions. Simple, fast, and reliable digital transformation.</p>
         <div class="btn-group">
-          <a href="#contact" class="btn btn-primary">Get Started</a>
-          <a href="#contact" class="btn btn-outline">Contact Us</a>
+          <a href="/Contact" class="btn btn-primary">Get Started</a>
+          <a href="/Contact" class="btn btn-outline">Contact Us</a>
         </div>
       </div>
       <div class="hero-image" data-aos="fade-left">
@@ -739,7 +744,7 @@
     </div>
   </section>
 
-  <!-- Portfolio - Simple & Clean -->
+  <!-- Portfolio -->
   <section id="portfolio">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Our Recent Work</h2>
@@ -768,7 +773,7 @@
     </div>
   </section>
 
-  <!-- Contact Section - Highlighted with Linkable Info -->
+  <!-- Contact Section with Updated Contact Info -->
   <section id="contact" class="contact-section">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Let's Connect</h2>
@@ -776,104 +781,72 @@
       <div class="contact-wrapper">
         <div class="contact-info" data-aos="fade-right">
           <h3><i class="fas fa-comment-dots" style="margin-right: 12px; color: var(--primary);"></i> Get In Touch</h3>
-          
-          <div class="detail-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <div>
-              <strong>Visit Us</strong>
-              <p>Maharajganj, Uttar Pradesh - 273163, India</p>
-            </div>
-          </div>
-          
-          <div class="detail-item">
-            <i class="fas fa-phone-alt"></i>
-            <div>
-              <strong>Call Us</strong>
-              <a href="tel:+918299388115">+91 8299388115</a>
-            </div>
-          </div>
-          
-          <div class="detail-item">
-            <i class="fas fa-envelope"></i>
-            <div>
-              <strong>Email Us</strong>
-              <a href="mailto:Hassanmrj4u@gmail.com">Hassanmrj4u@gmail.com</a>
-            </div>
-          </div>
-          
-          <div class="detail-item">
-            <i class="fas fa-clock"></i>
-            <div>
-              <strong>Business Hours</strong>
-              <p>Mon-Fri: 9AM - 7PM | Sat: 10AM - 4PM</p>
-            </div>
-          </div>
-
+          <div class="detail-item"><i class="fas fa-map-marker-alt"></i><div><strong>Visit Us</strong><p>Maharajganj, Uttar Pradesh - 273163, India</p></div></div>
+          <div class="detail-item"><i class="fas fa-phone-alt"></i><div><strong>Call Us</strong><a href="tel:+918000000005">+91 8000000005</a></div></div>
+          <div class="detail-item"><i class="fas fa-envelope"></i><div><strong>Email Us</strong><a href="mailto:exynoxsoftwares@gmail.com">exynoxsoftwares@gmail.com</a></div></div>
+          <div class="detail-item"><i class="fas fa-clock"></i><div><strong>Business Hours</strong><p>Mon-Fri: 9AM - 7PM | Sat: 10AM - 4PM</p></div></div>
           <div class="social-links">
             <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/918299388115" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/exynoxsoftwares" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/918000000005" target="_blank"><i class="fab fa-whatsapp"></i></a>
             <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
-        
         <div class="contact-form" data-aos="fade-left">
           <h3><i class="fas fa-paper-plane" style="margin-right: 12px; color: var(--primary);"></i> Send a Message</h3>
           <form id="contactForm">
-            <div class="form-group">
-              <input type="text" placeholder="Your Full Name" required>
-            </div>
-            <div class="form-group">
-              <input type="email" placeholder="Email Address" required>
-            </div>
-            <div class="form-group">
-              <input type="tel" placeholder="Phone Number">
-            </div>
-            <div class="form-group">
-              <textarea placeholder="Tell us about your project..." rows="4"></textarea>
-            </div>
+            <div class="form-group"><input type="text" placeholder="Your Full Name" required></div>
+            <div class="form-group"><input type="email" placeholder="Email Address" required></div>
+            <div class="form-group"><input type="tel" placeholder="Phone Number"></div>
+            <div class="form-group"><textarea placeholder="Tell us about your project..." rows="4"></textarea></div>
             <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-arrow-right"></i></button>
           </form>
         </div>
       </div>
     </div>
   </section>
+</main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>Exynox Softwares</h4>
-          <p><i class="fas fa-map-marker-alt"></i> Maharajganj, Uttar Pradesh</p>
-          <p><i class="fas fa-phone-alt"></i> <a href="tel:+918299388115" style="color:#B0C4DE;">+91 8299388115</a></p>
-          <p><i class="fas fa-envelope"></i> <a href="mailto:Hassanmrj4u@gmail.com" style="color:#B0C4DE;">Hassanmrj4u@gmail.com</a></p>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <a href="#home"><i class="fas fa-chevron-right"></i> Home</a>
-          <a href="#about"><i class="fas fa-chevron-right"></i> About</a>
-          <a href="#services"><i class="fas fa-chevron-right"></i> Services</a>
-          <a href="#portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a>
-        </div>
-        <div class="footer-col">
-          <h4>Our Services</h4>
-          <a href="#"><i class="fas fa-code"></i> Web Development</a>
-          <a href="#"><i class="fas fa-mobile-alt"></i> App Development</a>
-          <a href="#"><i class="fas fa-paint-brush"></i> UI/UX Design</a>
-        </div>
-        <div class="footer-col">
-          <h4>Support</h4>
-          <p><i class="fas fa-headset"></i> 24/7 Support</p>
-          <p><i class="fas fa-comment-dots"></i> Live Chat Available</p>
-        </div>
+<!-- Footer with Updated Contact Info -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Exynox Softwares</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Maharajganj, Uttar Pradesh - 273163</p>
+        <p><i class="fas fa-phone-alt"></i> <a href="tel:+918000000005">+91 8000000005</a></p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:exynoxsoftwares@gmail.com">exynoxsoftwares@gmail.com</a></p>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Exynox Softwares | We Build Your Digital Future | All Rights Reserved</p>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#home"><i class="fas fa-chevron-right"></i> Home</a>
+        <a href="/about"><i class="fas fa-chevron-right"></i> About Us</a>
+        <a href="/services"><i class="fas fa-chevron-right"></i> Services</a>
+        <a href="/Portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <a href="/services"><i class="fas fa-code"></i> Web Development</a>
+        <a href="/services"><i class="fas fa-mobile-alt"></i> App Development</a>
+        <a href="/services"><i class="fas fa-paint-brush"></i> UI/UX Design</a>
+        <a href="/services"><i class="fas fa-chart-line"></i> Digital Marketing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="footer-social">
+          <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/exynoxsoftwares" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/918000000005" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p style="margin-top: 20px;"><i class="fas fa-headset"></i> 24/7 Support Available</p>
       </div>
     </div>
-  </footer>
-</main>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Exynox Softwares | We Build Your Digital Future | All Rights Reserved</p>
+    </div>
+  </div>
+</footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
@@ -888,26 +861,20 @@
   const navLinksMenu = document.getElementById('navLinks');
   mobileBtn.addEventListener('click', () => navLinksMenu.classList.toggle('active'));
 
-  // Simple Portfolio Items - Clean Presentation
   const portfolioItems = [
-    { name: "Corporate Nexus", category: "Web Design", img: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600" },
-    { name: "Urban E-Store", category: "E-commerce", img: "https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=600" },
-    { name: "Creative Portfolio", category: "UI/UX", img: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600" },
-    { name: "Organic Market", category: "Web App", img: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600" }
+    { name: "Corporate Nexus", img: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { name: "Urban E-Store", img: "https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { name: "Creative Portfolio", img: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { name: "Organic Market", img: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600" }
   ];
-  
   const portfolioGrid = document.getElementById('portfolioGrid');
   portfolioGrid.innerHTML = portfolioItems.map(item => `
     <div class="portfolio-item" data-aos="fade-up">
       <img src="${item.img}" alt="${item.name}" loading="lazy">
-      <div class="portfolio-overlay">
-        <h3>${item.name}</h3>
-        <p>${item.category}</p>
-      </div>
+      <div class="portfolio-overlay"><h3>${item.name}</h3></div>
     </div>
   `).join('');
 
-  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
@@ -921,7 +888,6 @@
     });
   });
 
-  // Form submission
   const contactForm = document.getElementById('contactForm');
   if(contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -938,4 +904,4 @@
   }
 </style>
 </body>
-  </html>
+                 </html>
