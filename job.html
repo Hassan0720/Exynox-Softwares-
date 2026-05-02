@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Exynox Softwares | Online Career Opportunity</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1e2a41;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .fade-section {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-banner {
+      width: 100%;
+      height: auto;
+      max-height: 480px;
+      overflow: hidden;
+      background: #0a2540;
+    }
+
+    .hero-banner img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-content {
+      text-align: center;
+      padding: 48px 20px 32px;
+      background: linear-gradient(to bottom, #ffffff, #f9fafc);
+    }
+
+    .hero-content h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #0b2b44;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 28px auto;
+      color: #2c3e50;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: #1e6fdf;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 14px 38px;
+      border-radius: 48px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 14px rgba(30, 111, 223, 0.25);
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-primary:hover {
+      background: #0f5bc2;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 22px rgba(30, 111, 223, 0.3);
+    }
+
+    .card-grid {
+      background: #f8faff;
+      padding: 60px 0;
+    }
+
+    .job-card {
+      background: white;
+      border-radius: 32px;
+      box-shadow: 0 18px 36px -12px rgba(0, 0, 0, 0.08);
+      padding: 32px 28px;
+      max-width: 900px;
+      margin: 0 auto;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .job-details-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .detail-item {
+      flex: 1 1 180px;
+      background: #f9f9fe;
+      padding: 20px 12px;
+      border-radius: 24px;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .detail-item i {
+      font-size: 2rem;
+      color: #1e6fdf;
+      margin-bottom: 12px;
+    }
+
+    .detail-item h4 {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #1e2a47;
+      margin-bottom: 6px;
+    }
+
+    .detail-item p {
+      font-size: 0.95rem;
+      color: #2c3e50;
+      font-weight: 500;
+    }
+
+    .detail-item:hover {
+      background: #eef3ff;
+      transform: scale(1.02);
+    }
+
+    .steps-section {
+      padding: 60px 0;
+      background: white;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 48px;
+      color: #0a2647;
+    }
+
+    .steps-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .step-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 24px 22px;
+      flex: 1 1 200px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+      border: 1px solid #eef2ff;
+      transition: all 0.2s;
+    }
+
+    .step-card:hover {
+      border-color: #cbdffc;
+      transform: translateY(-5px);
+    }
+
+    .step-number {
+      background: #eef4ff;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 60px;
+      margin: 0 auto 20px auto;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #1e6fdf;
+    }
+
+    .form-section {
+      padding: 60px 0;
+      background: #f5f9ff;
+    }
+
+    .form-container {
+      max-width: 780px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 40px;
+      padding: 36px 32px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 8px;
+      color: #1e2f44;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 28px;
+      border: 1.5px solid #e2e8f0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      transition: 0.2s;
+      background: #fff;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: #1e6fdf;
+      box-shadow: 0 0 0 3px rgba(30, 111, 223, 0.1);
+    }
+
+    .submit-btn {
+      background: #1e6fdf;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 14px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      border-radius: 48px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .submit-btn:hover:not(:disabled) {
+      background: #0f5bc2;
+      transform: translateY(-2px);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .message-area {
+      margin-top: 24px;
+      padding: 14px;
+      border-radius: 32px;
+      text-align: center;
+      font-weight: 500;
+      display: none;
+    }
+
+    .success-message {
+      background: #e0f2e9;
+      color: #166534;
+      border-left: 4px solid #22c55e;
+    }
+
+    .error-message {
+      background: #ffe6e5;
+      color: #b91c1c;
+      border-left: 4px solid #ef4444;
+    }
+
+    .company-info {
+      background: #0e1e2f;
+      color: #eef4ff;
+      padding: 56px 0 48px;
+    }
+
+    .company-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: start;
+      gap: 30px;
+    }
+
+    .company-desc {
+      flex: 2;
+    }
+
+    .company-desc h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: white;
+    }
+
+    .contact-details {
+      flex: 1.5;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 24px;
+      border-radius: 28px;
+    }
+
+    .contact-details p {
+      margin: 14px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .contact-details a {
+      color: #9bc5ff;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .contact-details a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 1.7rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .job-details-list {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .container {
+        padding: 0 20px;
+      }
+      .form-container {
+        padding: 28px 20px;
+      }
+      .btn-primary {
+        padding: 12px 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero-banner">
+    <img src="https://picsum.photos/id/20/2000/800" alt="Online workspace, business growth" loading="lazy">
+  </div>
+
+  <div class="hero-content">
+    <div class="container">
+      <h1>Start Your Online Career with Exynox Softwares – No Experience Needed</h1>
+      <p>Join Exynox Softwares and start your journey in the online world by helping businesses grow. This opportunity is great for students and beginners who want to learn and gain real experience. You just need basic communication skills and a willingness to learn.</p>
+      <a href="#application-form" class="btn-primary" id="applyNowBtn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Apply Now</a>
+    </div>
+  </div>
+
+  <div class="card-grid fade-section">
+    <div class="container">
+      <div class="job-card">
+        <h2 style="font-size: 1.7rem; margin-bottom: 20px; text-align: center;">✨ Job Overview</h2>
+        <div class="job-details-list">
+          <div class="detail-item"><i class="fas fa-briefcase"></i><h4>Job Role</h4><p>Client Approach Executive</p></div>
+          <div class="detail-item"><i class="fas fa-laptop-house"></i><h4>Work Type</h4><p>Remote / Part-time</p></div>
+          <div class="detail-item"><i class="fas fa-comments"></i><h4>Skills Required</h4><p>Basic communication, internet usage</p></div>
+          <div class="detail-item"><i class="fas fa-graduation-cap"></i><h4>Eligibility</h4><p>Students & Beginners</p></div>
+          <div class="detail-item"><i class="fas fa-chart-line"></i><h4>Earning</h4><p>Commission-based</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="steps-section fade-section">
+    <div class="container">
+      <h2 class="section-title">📌 Simple Apply Process</h2>
+      <div class="steps-container">
+        <div class="step-card"><div class="step-number">1</div><h3>Click on Apply Now</h3><p>Start your journey with one click</p></div>
+        <div class="step-card"><div class="step-number">2</div><h3>Fill your basic details</h3><p>Quick form, no complexity</p></div>
+        <div class="step-card"><div class="step-number">3</div><h3>Get instructions via email</h3><p>We'll guide you every step</p></div>
+        <div class="step-card"><div class="step-number">4</div><h3>Start working & earning</h3><p>Real experience and growth</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section" id="application-form">
+    <div class="container">
+      <div class="form-container">
+        <h2 style="font-size: 1.8rem; margin-bottom: 12px; text-align: center;">📋 Start Your Application</h2>
+        <p style="text-align: center; margin-bottom: 32px; color: #4a5b6e;">Fill the details and our team will reach out</p>
+        
+        <form id="applicationForm">
+          <div class="form-group">
+            <label><i class="fas fa-user"></i> Full Name *</label>
+            <input type="text" id="fullName" name="Full Name" required>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-envelope"></i> Email Address (optional)</label>
+            <input type="email" id="email" name="Email Address">
+          </div>
+          <div class="form-group">
+            <label><i class="fab fa-instagram"></i> Instagram ID (optional)</label>
+            <input type="text" id="instagram" name="Instagram Id">
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-phone-alt"></i> Phone Number *</label>
+            <input type="tel" id="phone" name="Phone Number" required>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-city"></i> City *</label>
+            <input type="text" id="city" name="City" required>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-pencil-alt"></i> Short Message (optional)</label>
+            <textarea id="message" rows="3" name="Short Message"></textarea>
+          </div>
+          <button type="submit" class="submit-btn" id="formSubmitBtn"><i class="fas fa-check-circle"></i> Submit Application</button>
+          <div id="formFeedback" class="message-area"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="company-info fade-section">
+    <div class="container">
+      <div class="company-grid">
+        <div class="company-desc">
+          <h3>Exynox Softwares</h3>
+          <p style="line-height: 1.5; opacity: 0.9;">Exynox Softwares is a growing digital solutions company helping businesses build their online presence through websites and marketing. We empower fresh talents and beginners to gain industry exposure with flexible remote opportunities.</p>
+        </div>
+        <div class="contact-details">
+          <h4 style="font-size: 1.3rem; margin-bottom: 18px;"><i class="fas fa-address-card"></i> Contact Us</h4>
+          <p><i class="fas fa-envelope" style="width: 28px;"></i> <a href="mailto:exynoxsoftwares@gmail.com">exynoxsoftwares@gmail.com</a></p>
+          <p><i class="fas fa-globe"></i> <a href="https://exynoxsoftwares.vercel.app/" target="_blank">exynoxsoftwares.vercel.app</a></p>
+          <p><i class="fas fa-map-marker-alt"></i> Maharajganj, Uttar Pradesh, India</p>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2025 Exynox Softwares — Building futures, remotely.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 🔴 IMPORTANT: REPLACE THIS URL WITH YOUR NEW DEPLOYED WEB APP URL FROM STEP 2
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbzpK4Pxa8TG9dCDWxqUJz0aea5tbAhOxZpgf5DyVldVcUP1cWlc90rmY3YEcJoWAfKThg/exec";
+    
+    const form = document.getElementById('applicationForm');
+    const feedbackDiv = document.getElementById('formFeedback');
+
+    function showMessage(text, type) {
+      feedbackDiv.style.display = 'block';
+      feedbackDiv.textContent = text;
+      feedbackDiv.className = `message-area ${type === 'success' ? 'success-message' : 'error-message'}`;
+      
+      setTimeout(() => {
+        if (feedbackDiv) {
+          feedbackDiv.style.display = 'none';
+        }
+      }, 8000);
+    }
+
+    function resetForm() {
+      form.reset();
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Validate required fields
+      const fullName = document.getElementById('fullName').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const city = document.getElementById('city').value.trim();
+
+      if (!fullName || !phone || !city) {
+        showMessage('❌ Error: Please fill in all required fields (Full Name, Phone Number, and City).', 'error');
+        return;
+      }
+
+      if (phone.length < 5) {
+        showMessage('❌ Error: Please enter a valid phone number (minimum 5 digits).', 'error');
+        return;
+      }
+
+      // Prepare data
+      const formData = {
+        fullName: fullName,
+        email: document.getElementById('email').value.trim(),
+        instagram: document.getElementById('instagram').value.trim(),
+        phone: phone,
+        city: city,
+        message: document.getElementById('message').value.trim()
+      };
+
+      // Disable button and show loading
+      const submitBtn = document.getElementById('formSubmitBtn');
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Submitting...';
+
+      try {
+        // Send data to Google Apps Script
+        const response = await fetch(GOOGLE_SHEET_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: new URLSearchParams(formData).toString()
+        });
+
+        // Success - show message and reset form
+        showMessage('✅ Your application has been successfully submitted! Our team will contact you via email soon. Please check your inbox (and spam folder).', 'success');
+        resetForm();
+
+      } catch (error) {
+        console.error('Submission error:', error);
+        let errorMsg = '⚠️ Submission failed. ';
+        
+        if (error.message.includes('Failed to fetch')) {
+          errorMsg += 'Unable to reach the server. Please check your internet connection or contact support.';
+        } else {
+          errorMsg += 'Please try again or contact exynoxsoftwares@gmail.com for assistance.';
+        }
+        
+        showMessage(errorMsg, 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      }
+    });
+
+    // Smooth scroll for CTA button
+    document.getElementById('applyNowBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('application-form').scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    });
+
+    // Fade-in animations on load
+    window.addEventListener('load', () => {
+      const faders = document.querySelectorAll('.fade-section');
+      faders.forEach((el, idx) => {
+        el.style.animationDelay = `${idx * 0.07}s`;
+      });
+    });
+  </script>
+</body>
+</html>
